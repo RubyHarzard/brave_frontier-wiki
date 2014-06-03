@@ -40,3 +40,4 @@ gem 'spring',        group: :development
 
 gem 'httparty'
 gem 'rails_config'
+gem 'angularjs-rails'
