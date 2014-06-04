@@ -4,8 +4,19 @@ class UnitSerializer < ActiveModel::Serializer
              :super_brave_burst_title, :super_brave_burst_details
 
   has_one :leader_skill
+  has_many :statuses
+
   has_one :evolution_recipe
   has_one :before_evo_unit
   has_one :after_evo_unit
-  has_many :statuses
+
+  def filter(keys)
+    unless object.evolution_recipe
+      keys.delete :evolution_recipe
+      keys.delete :after_evo_unit
+    end
+
+    keys.delete :before_evo_unit unless object.before_evo_unit
+    keys
+  end
 end
