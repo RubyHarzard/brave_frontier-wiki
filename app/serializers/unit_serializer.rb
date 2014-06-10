@@ -17,6 +17,7 @@ class UnitSerializer < ActiveModel::Serializer
       keys.delete :brave_burst_title
       keys.delete :brave_burst_details
     end
+
     unless object.super_brave_burst_title
       keys.delete :super_brave_burst_title
       keys.delete :super_brave_burst_details
