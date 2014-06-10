@@ -27,7 +27,7 @@ module BraveFrontier2Wiki
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.generators.template_engine = :haml
+    config.generators.template_engine = :slim
     config.sass.preferred_syntax = :sass
   end
 end
