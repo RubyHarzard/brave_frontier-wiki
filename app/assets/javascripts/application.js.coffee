@@ -13,4 +13,21 @@
 #= require jquery
 #= require jquery_ujs
 #= require twitter/bootstrap
+#= require turbolinks
+#= require angular
 #= require_tree .
+
+# Makes AngularJS work with turbolinks.
+$(document).on 'page:load', ->
+  $('[ng-app]').each ->
+    module = $(this).attr('ng-app')
+    angular.bootstrap(this, [module])
+
+app = angular.module('brave-frontier', [])
+
+app.controller 'UnitController', ['$http', ($http) ->
+  self = this
+  $http.get('/units').success (data) ->
+    self.units = data.units
+  true
+]
