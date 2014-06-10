@@ -41,6 +41,10 @@ gem 'spring', group: :development
 gem 'rails_config'
 gem 'angularjs-rails'
 gem 'active_model_serializers'
+gem 'haml'
+gem 'haml-rails'
+gem 'twitter-bootstrap-rails', :github => 'seyhunak/twitter-bootstrap-rails', :branch => 'bootstrap3'
+
 
 # Test Framework & Tools
 group :development, :test do

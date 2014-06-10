@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root :to => 'home#index'
+  get 'home/index'
+
   resources :units, :only => :index
 
   # The priority is based upon order of creation: first created -> highest priority.
