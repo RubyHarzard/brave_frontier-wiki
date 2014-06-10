@@ -2,7 +2,12 @@ class UnitsController < ApplicationController
   respond_to :json
 
   def index
-    @units = Unit.first
-    respond_with :json, @units
+    @units = Unit.all
+
+    render :json => @units, :status => :ok
+  end
+
+  def show
+
   end
 end
