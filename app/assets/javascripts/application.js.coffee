@@ -23,11 +23,5 @@ $(document).on 'page:load', ->
     module = $(this).attr('ng-app')
     angular.bootstrap(this, [module])
 
-app = angular.module('brave-frontier', [])
-
-app.controller 'UnitController', ['$http', ($http) ->
-  self = this
-  $http.get('/api/v1/units').success (data) ->
-    self.units = data.units
-  true
-]
+# Angular JS
+app = angular.module('brave-frontier', ['bf-unit'])
