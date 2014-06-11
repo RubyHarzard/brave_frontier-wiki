@@ -27,7 +27,7 @@ app = angular.module('brave-frontier', [])
 
 app.controller 'UnitController', ['$http', ($http) ->
   self = this
-  $http.get('/units').success (data) ->
+  $http.get('/api/v1/units').success (data) ->
     self.units = data.units
   true
 ]

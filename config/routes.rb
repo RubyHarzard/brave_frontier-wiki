@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root :to => 'home#index'
-  get 'home/index'
 
-  resources :units, :only => :index
+  namespace :api do
+    api_version(:module => "V1", :path => {:value => "v1"}, :defaults => {:format => :json}, :default => true) do
+      resources :units, :only => [:index, :show]
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

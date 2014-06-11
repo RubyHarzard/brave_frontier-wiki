@@ -45,6 +45,7 @@ gem 'slim'
 gem 'slim-rails'
 gem 'twitter-bootstrap-rails', :github => 'seyhunak/twitter-bootstrap-rails', :branch => 'bootstrap3'
 
+gem 'versionist'
 
 # Test Framework & Tools
 group :development, :test do
