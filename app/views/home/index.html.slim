@@ -1,21 +1,28 @@
 div(ng-controller="UnitListController as unitListCtrl")
+  pre
+    label Name:
+    input(ng-model="query.name")
+    label Element:
+    input(ng-model="query.element")
+
   table.table
     tr
-      th No.
+      th
+        a(href="" ng-click="predicate = 'number'; reverse=!reverse") No.
       th Pic
-      th Name
-      th Element
-      th Star
-      th Cost
-    tr(ng-repeat="unit in unitCtrl.units")
+      th
+        a(href="" ng-click="predicate = 'name'; reverse=!reverse") Name
+      th
+        a(href="" ng-click="predicate = 'element'; reverse=!reverse") Element
+      th
+        a(href="" ng-click="predicate = 'star'; reverse=!reverse") Star
+      th
+        a(href="" ng-click="predicate = 'cost'; reverse=!reverse") Cost
+
+    tr(ng-repeat="unit in units | orderBy:predicate:reverse | filter:query")
+      td() {{unit.number}}
       td
-        '{{unit.number}}
-      td
-      td
-        '{{unit.name}}
-      td
-        '{{unit.element}}
-      td
-        '{{unit.star}}
-      td
-        '{{unit.cost}}
+      td() {{unit.name}}
+      td() {{unit.element}}
+      td() {{unit.star}}
+      td() {{unit.cost}}

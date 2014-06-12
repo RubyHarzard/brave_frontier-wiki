@@ -2,7 +2,7 @@ module API
   class V1::UnitsController < V1::BaseController
 
     def index
-      @units = Unit.all
+      @units = Unit.includes(:unit_leader_skill, :leader_skill, :evolution_recipe, :after_evo_unit, :statuses).all
       render :json => @units, :status => :ok
     end
 
