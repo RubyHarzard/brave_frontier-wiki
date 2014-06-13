@@ -20,26 +20,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
-# Dump of table evolution_recipes
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `evolution_recipes`;
-
-CREATE TABLE `evolution_recipes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `before_evo_unit_id` int(11) DEFAULT NULL,
-  `after_evo_unit_id` int(11) DEFAULT NULL,
-  `price` int(11) DEFAULT NULL,
-  `unit_1_id` int(11) DEFAULT NULL,
-  `unit_2_id` int(11) DEFAULT NULL,
-  `unit_3_id` int(11) DEFAULT NULL,
-  `unit_4_id` int(11) DEFAULT NULL,
-  `unit_5_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-
-
 # Dump of table leader_skills
 # ------------------------------------------------------------
 
