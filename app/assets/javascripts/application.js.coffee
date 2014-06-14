@@ -15,13 +15,21 @@
 #= require twitter/bootstrap
 #= require turbolinks
 #= require angular
+#= require angular-route
 #= require_tree .
+
+
+bfApp = angular.module('brave-frontier', ['ngRoute','bf-unit'])
+
+bfApp.config ($routeProvider) ->
+  $routeProvider.when '/', redirectTo: '/home'
+  $routeProvider.when '/home', templateUrl: '/home/index.html', controller: 'UnitListController'
+#  $routeProvider.when '/task_lists/:list_id', templateUrl: '/templates/task_list.html', controller: 'TodoListController'
+
+
 
 # Makes AngularJS work with turbolinks.
 $(document).on 'page:load', ->
   $('[ng-app]').each ->
     module = $(this).attr('ng-app')
     angular.bootstrap(this, [module])
-
-# Angular JS
-app = angular.module('brave-frontier', ['bf-unit'])

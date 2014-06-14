@@ -7,5 +7,4 @@ app = angular.module('bf-unit', [])
 app.controller('UnitListController', ($scope, $http) ->
   $http.get('/api/v1/units').success (data) ->
     $scope.units = data.units
-  $scope.predicate = 'number'
 )

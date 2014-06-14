@@ -1,28 +1,8 @@
 div(ng-controller="UnitListController as unitListCtrl")
   pre
-    label Name:
-    input(ng-model="query.name")
-    label Element:
-    input(ng-model="query.element")
+    = label_tag 'Name'
+    = text_field_tag :name, nil, placeholder: 'Filter by name', 'ng-model' => 'query.name'
+    = label_tag 'Element'
+    = select_tag :element, options_for_select(Settings.elements), prompt: 'Filter by element', 'ng-model' => 'query.element'
 
-  table.table
-    tr
-      th
-        a(href="" ng-click="predicate = 'number'; reverse=!reverse") No.
-      th Pic
-      th
-        a(href="" ng-click="predicate = 'name'; reverse=!reverse") Name
-      th
-        a(href="" ng-click="predicate = 'element'; reverse=!reverse") Element
-      th
-        a(href="" ng-click="predicate = 'star'; reverse=!reverse") Star
-      th
-        a(href="" ng-click="predicate = 'cost'; reverse=!reverse") Cost
-
-    tr(ng-repeat="unit in units | orderBy:predicate:reverse | filter:query")
-      td() {{unit.number}}
-      td
-      td() {{unit.name}}
-      td() {{unit.element}}
-      td() {{unit.star}}
-      td() {{unit.cost}}
+  = render 'unit_table'
