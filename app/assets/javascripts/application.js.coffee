@@ -19,11 +19,11 @@
 #= require_tree .
 
 
-bfApp = angular.module('brave-frontier', ['ngRoute','bf-unit'])
+bfApp = angular.module('brave-frontier', ['ngRoute','unitControllers'])
 
 bfApp.config ($routeProvider) ->
-  $routeProvider.when '/', redirectTo: '/home'
-  $routeProvider.when '/home', templateUrl: '/home/index.html', controller: 'UnitListController'
+  $routeProvider.when '/', redirectTo: '/units'
+  $routeProvider.when '/units', templateUrl: '/home/index.html', controller: 'UnitListController'
 #  $routeProvider.when '/task_lists/:list_id', templateUrl: '/templates/task_list.html', controller: 'TodoListController'
 
 

@@ -2,9 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-app = angular.module('bf-unit', [])
+unitControllers = angular.module('unitControllers', [])
 
-app.controller('UnitListController', ($scope, $http) ->
+unitControllers.controller('UnitListCtrl', ($scope, $http) ->
   $http.get('/api/v1/units').success (data) ->
     $scope.units = data.units
 )

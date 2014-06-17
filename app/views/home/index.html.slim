@@ -1,4 +1,4 @@
-div(ng-controller="UnitListController as unitListCtrl")
+div(ng-controller="UnitListCtrl as unitListCtrl")
   pre
     = label_tag 'Name'
     = text_field_tag :name, nil, placeholder: 'Filter by name', 'ng-model' => 'query.name'

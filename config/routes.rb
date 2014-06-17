@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root :to => 'home#index'
 
-  resources :home, :only => :index
+  get '/units' => 'home#index'
+  get '/units/:id' => 'home#index'
 
   namespace :api do
     api_version(:module => "V1", :path => {:value => "v1"}, :defaults => {:format => :json}, :default => true) do
