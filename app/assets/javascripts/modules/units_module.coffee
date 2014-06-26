@@ -8,3 +8,7 @@ unitControllers.controller('UnitListCtrl', ($scope, $http) ->
   $http.get('/api/v1/units').success (data) ->
     $scope.units = data.units
 )
+
+unitControllers.controller('UnitDetailCtrl', ($scope, $routeParams) ->
+  $scope.phoneId = $routeParams.id;
+)

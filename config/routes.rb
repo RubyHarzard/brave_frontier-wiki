@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  root :to => 'home#index'
-
-  get '/units' => 'home#index'
-  get '/units/:id' => 'home#index'
-
   namespace :api do
     api_version(:module => "V1", :path => {:value => "v1"}, :defaults => {:format => :json}, :default => true) do
       resources :units, :only => [:index, :show]
     end
   end
+
+  root :to => 'home#index'
+
+  get '/units' => 'units#index'
+  get '/units/:id' => 'units#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

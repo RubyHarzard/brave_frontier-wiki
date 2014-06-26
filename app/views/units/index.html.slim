@@ -1,0 +1,8 @@
+div(ng-controller="UnitListCtrl as unitListCtrl")
+  pre
+    = label_tag 'Name'
+    = text_field_tag :name, nil, placeholder: 'Filter by name', 'ng-model' => 'query.name'
+    = label_tag 'Element'
+    = select_tag :element, options_for_select(Settings.elements), prompt: 'Filter by element', 'ng-model' => 'query.element'
+
+  = render 'unit_table'
