@@ -1,4 +1,5 @@
 class UnitsController < ApplicationController
+  layout false
 
   def index
   end

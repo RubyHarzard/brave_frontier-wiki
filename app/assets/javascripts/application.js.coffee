@@ -23,8 +23,8 @@ bfApp = angular.module('braveFrontierApp', ['ngRoute','unitControllers'])
 
 bfApp.config ($routeProvider, $locationProvider) ->
   $locationProvider.html5Mode true
-  $routeProvider.when '/',  redirectTo: '/home'
-  $routeProvider.when '/units', templateUrl: '/units/index.html', controller: 'UnitListCtrl'
+  $routeProvider.when '/',  redirectTo: '/units'
+  $routeProvider.when '/units', templateUrl: '/units/index', controller: 'UnitListCtrl'
 #  $routeProvider.when '/task_lists/:list_id', templateUrl: '/templates/task_list.html', controller: 'TodoListController'
 
 
